@@ -3,15 +3,19 @@ package com.escuelaDeportiva.EscuelaDeportiva.models;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "usuarios")
+@Document(collection="usuarios")
 public class UsuarioModel {
-
+    
     @Id
     private String id;
     private String nombre;
     private String correo;
     private String username;
     private String password;
+    // ROL
+
+    //Este campo me va a guardar el token de acceso de manera temporal
+    private String hash;
 
     public String getId() {
         return id;
@@ -53,6 +57,16 @@ public class UsuarioModel {
         this.password = password;
     }
 
+    public String getHash() {
+        return hash;
+    }
+
+    public void setHash(String hash) {
+        this.hash = hash;
+    }
+
+    
 }
+
 
 
